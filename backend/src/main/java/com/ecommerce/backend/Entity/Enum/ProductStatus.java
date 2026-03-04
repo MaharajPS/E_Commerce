@@ -1,5 +1,6 @@
 package com.ecommerce.backend.Entity.Enum;
 
-public class ProductStatus {
-    
+public enum ProductStatus {
+    ACTIVE,
+    INACTIVE
 }

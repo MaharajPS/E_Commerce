@@ -13,7 +13,7 @@ import lombok.Getter;
 @Builder
 @Table(name="authTable")
 
-public class AuthEntity {
+public class User {
 
     
     

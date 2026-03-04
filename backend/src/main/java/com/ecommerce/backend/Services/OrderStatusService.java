@@ -3,12 +3,12 @@ package com.ecommerce.backend.Services;
 
 import com.ecommerce.backend.dto.response.OrderItemResponse;
 import com.ecommerce.backend.dto.response.OrderResponse;
-import com.ecommerce.backend.exception.BusinessRuleViolationException;
-import com.ecommerce.backend.exception.OrderNotFoundException;
-import com.ecommerce.backend.model.Order;
-import com.ecommerce.backend.model.OrderItem;
-import com.ecommerce.backend.model.enums.OrderStatus;
-import com.ecommerce.backend.repository.OrderRepository;
+import com.ecommerce.backend.Exception.BusinessRuleViolationException;
+import com.ecommerce.backend.Exception.OrderNotFoundException;
+import com.ecommerce.backend.Entity.Order;
+import com.ecommerce.backend.Entity.OrderItem;
+import com.ecommerce.backend.Entity.Enum.OrderStatus;
+import com.ecommerce.backend.Repository.OrderRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

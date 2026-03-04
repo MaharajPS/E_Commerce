@@ -4,6 +4,8 @@ import com.ecommerce.backend.dto.request.ProductRequest;
 import com.ecommerce.backend.dto.response.ProductResponse;
 import com.ecommerce.backend.Entity.Product;
 import com.ecommerce.backend.Entity.Enum.ProductStatus;
+import com.ecommerce.backend.Exception.ResourceNotFoundException;
+import com.ecommerce.backend.Exception.InsufficientStockException;
 import com.ecommerce.backend.Repository.ProductRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

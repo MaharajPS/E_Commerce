@@ -1,6 +1,5 @@
 package com.ecommerce.backend.dto.response;
 
-package com.ecommerce.backend.dto.response;
 
 import lombok.Builder;
 import lombok.Data;

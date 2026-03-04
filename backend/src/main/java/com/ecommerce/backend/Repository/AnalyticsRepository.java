@@ -1,7 +1,7 @@
 package com.ecommerce.backend.Repository;
 
 
-import com.ecommerce.backend.Model.Order;
+import com.ecommerce.backend.Entity.Order;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;

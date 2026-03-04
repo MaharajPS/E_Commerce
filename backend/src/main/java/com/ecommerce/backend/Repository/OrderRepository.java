@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ecommerce.backend.Entity.Enum.OrderStatus;
 import com.ecommerce.backend.Entity.Order;
+import java.util.Optional;
 
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
@@ -24,7 +25,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
     Page<Order> findByStatus(OrderStatus status, Pageable pageable);
 
     @Query("SELECT o FROM Order o JOIN FETCH o.orderItems oi JOIN FETCH oi.product WHERE o.id = :id")
-    Order findByIdWithItems(@Param("id") Long id);
+    Optional<Order> findByIdWithItems(@Param("id") Long id);
 
     @Query("SELECT o FROM Order o JOIN FETCH o.orderItems WHERE o.customer.id = :customerId")
     List<Order> findByCustomerIdWithItems(@Param("customerId") Long customerId);

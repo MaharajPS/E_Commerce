@@ -40,9 +40,19 @@ public class ProductService {
     }
 
     public Page<ProductResponse> getAllProducts(int page, int size, String sortBy, String direction) {
-        Sort sort = direction.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+
+        if (sortBy == null || sortBy.isBlank()) {
+            sortBy = "id";
+        }
+
+        Sort sort = direction.equalsIgnoreCase("asc")
+                ? Sort.by(sortBy).ascending()
+                : Sort.by(sortBy).descending();
+
         PageRequest pageRequest = PageRequest.of(page, size, sort);
-        return productRepository.findAll(pageRequest).map(this::toProductResponse);
+
+        return productRepository.findAll(pageRequest)
+                .map(this::toProductResponse);
     }
 
     public List<ProductResponse> getActiveProducts() {

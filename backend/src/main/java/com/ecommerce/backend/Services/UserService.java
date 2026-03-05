@@ -11,13 +11,11 @@ import com.ecommerce.backend.Exception.UserAlreadyExistsException;
 import com.ecommerce.backend.Entity.User;
 import com.ecommerce.backend.Entity.Enum.UserRole;
 import com.ecommerce.backend.Repository.UserRepository;
-import com.ecommerce.backend.Security.JwtTokenProvider;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,14 +24,8 @@ import java.util.stream.Collectors;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
-    private final JwtTokenProvider jwtTokenProvider;
-
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder,
-                      JwtTokenProvider jwtTokenProvider) {
+    public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
-        this.jwtTokenProvider = jwtTokenProvider;
     }
 
     @Transactional
@@ -45,13 +37,13 @@ public class UserService {
         User user = User.builder()
                 .name(request.getName())
                 .email(request.getEmail())
-                .password(passwordEncoder.encode(request.getPassword()))
+                .password(request.getPassword())
                 .role(request.getRole() != null ? request.getRole() : UserRole.CUSTOMER)
                 .build();
 
         User savedUser = userRepository.save(user);
 
-        String token = jwtTokenProvider.generateToken(savedUser);
+        String token = String.valueOf(savedUser.getId());
 
         return AuthResponse.builder()
                 .id(savedUser.getId())
@@ -67,11 +59,11 @@ public class UserService {
         User user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new ResourceNotFoundException("User", "email", request.getEmail()));
 
-        if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+        if (!user.getPassword().equals(request.getPassword())) {
             throw new RuntimeException("Invalid credentials");
         }
 
-        String token = jwtTokenProvider.generateToken(user);
+        String token = String.valueOf(user.getId());
 
         return AuthResponse.builder()
                 .id(user.getId())
@@ -96,10 +88,17 @@ public class UserService {
     }
 
     public UserResponse getCurrentUser() {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String email = auth.getName();
-        User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new ResourceNotFoundException("User", "email", email));
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        if (attributes == null) {
+            throw new RuntimeException("No active request");
+        }
+        HttpServletRequest request = attributes.getRequest();
+        Long userId = (Long) request.getAttribute("userId");
+        if (userId == null) {
+            throw new RuntimeException("User not authenticated");
+        }
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User", "id", userId));
         return toUserResponse(user);
     }
 
@@ -110,7 +109,7 @@ public class UserService {
 
         user.setName(request.getName());
         if (request.getPassword() != null && !request.getPassword().isEmpty()) {
-            user.setPassword(passwordEncoder.encode(request.getPassword()));
+            user.setPassword(request.getPassword());
         }
 
         User updatedUser = userRepository.save(user);

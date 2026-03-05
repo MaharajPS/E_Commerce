@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';   // ✅ change 1
 import { productService } from '../services/productService';
 import { useCart } from '../context/CartContext';
 
@@ -8,6 +8,9 @@ const ProductsPage = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const { addToCart } = useCart();
+
+    const [searchParams] = useSearchParams();   // ✅ change 2
+    const search = searchParams.get("search") || "";
 
     useEffect(() => {
         fetchProducts();
@@ -25,18 +28,25 @@ const ProductsPage = () => {
         }
     };
 
+    // ✅ change 3 (filter products)
+    const filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(search.toLowerCase())
+    );
+
     if (loading) return <div className="p-12 text-center text-xl">Loading products...</div>;
     if (error) return <div className="p-12 text-center text-red-600">{error}</div>;
 
     return (
         <div className="container mx-auto px-4 py-8">
-            <h1 className="text-3xl font-bold mb-8 text-center text-gray-800">Our Products</h1>
+            <h1 className="text-3xl font-bold mb-8 text-center text-gray-800">
+                Our Products {search && `(Search: ${search})`}
+            </h1>
 
-            {products.length === 0 ? (
-                <p className="text-center text-gray-600">No active products available at the moment.</p>
+            {filteredProducts.length === 0 ? (
+                <p className="text-center text-gray-600">No matching products found.</p>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {products.map(product => (
+                    {filteredProducts.map(product => (
                         <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                             <div className="p-6">
                                 <h3 className="text-xl font-semibold mb-2">{product.name}</h3>

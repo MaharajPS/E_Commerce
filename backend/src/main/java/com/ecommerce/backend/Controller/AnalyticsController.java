@@ -7,7 +7,6 @@ import com.ecommerce.backend.dto.response.ProductSalesDto;
 import com.ecommerce.backend.Services.AnalyticsService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -16,7 +15,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/analytics")
-@PreAuthorize("hasRole('ADMIN')")
 public class AnalyticsController {
 
     private final AnalyticsService analyticsService;

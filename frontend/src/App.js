@@ -16,6 +16,7 @@ import OrdersPage from './pages/OrdersPage';
 import AdminPage from './pages/AdminPage';
 import AnalyticsPage from './pages/AnalyticsPage';
 
+
 function App() {
   return (
     <Router>

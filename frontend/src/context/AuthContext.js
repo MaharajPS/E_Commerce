@@ -22,10 +22,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (userData) => {
-    const data = await authService.register(userData);
-    setUser({ id: data.id, name: data.name, email: data.email, role: data.role });
-    return data;
-  };
+    await authService.register(userData);
+    };
 
   const logout = () => {
     authService.logout();

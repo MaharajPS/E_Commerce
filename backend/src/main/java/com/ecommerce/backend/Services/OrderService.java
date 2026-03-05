@@ -17,8 +17,6 @@ import com.ecommerce.backend.Repository.OrderRepository;
 import com.ecommerce.backend.Repository.UserRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -41,16 +39,20 @@ public class OrderService {
 
     @Transactional
     public OrderResponse createOrder(OrderRequest request) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String email = auth.getName();
-
-        User customer = userRepository.findByEmail(email)
-                .orElseThrow(() -> new ResourceNotFoundException("User", "email", email));
+        jakarta.servlet.http.HttpServletRequest httpRequest = 
+            ((org.springframework.web.context.request.ServletRequestAttributes) 
+            org.springframework.web.context.request.RequestContextHolder.getRequestAttributes()).getRequest();
+        Long userId = (Long) httpRequest.getAttribute("userId");
+        if (userId == null) {
+            throw new RuntimeException("User not authenticated");
+        }
+        User customer = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User", "id", userId));
 
         Order order = Order.builder()
                 .customer(customer)
                 .status(OrderStatus.CREATED)
-                .orderItems(List.of())
+                .orderItems(new java.util.ArrayList<>())
                 .build();
 
         for (OrderItemRequest itemRequest : request.getItems()) {
@@ -80,11 +82,15 @@ public class OrderService {
     }
 
     public List<OrderResponse> getMyOrders() {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String email = auth.getName();
-
-        User customer = userRepository.findByEmail(email)
-                .orElseThrow(() -> new ResourceNotFoundException("User", "email", email));
+        jakarta.servlet.http.HttpServletRequest httpRequest = 
+            ((org.springframework.web.context.request.ServletRequestAttributes) 
+            org.springframework.web.context.request.RequestContextHolder.getRequestAttributes()).getRequest();
+        Long userId = (Long) httpRequest.getAttribute("userId");
+        if (userId == null) {
+            throw new RuntimeException("User not authenticated");
+        }
+        User customer = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User", "id", userId));
 
         return orderRepository.findByCustomerIdWithItems(customer.getId()).stream()
                 .map(this::toOrderResponse)

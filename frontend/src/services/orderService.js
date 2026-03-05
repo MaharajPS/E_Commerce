@@ -9,6 +9,20 @@ export const orderService = {
     const response = await api.get('/orders/my-orders');
     return response.data;
   },
+  confirmOrder: async (id) => {
+    const res = await api.put(`/orders/${id}/confirm`);
+    return res.data;
+  },
+
+  shipOrder: async (id) => {
+    const res = await api.put(`/orders/${id}/ship`);
+    return res.data;
+  },
+
+  deliverOrder: async (id) => {
+    const res = await api.put(`/orders/${id}/deliver`);
+    return res.data;
+  },
   getOrderById: async (id) => {
     const response = await api.get(`/orders/${id}`);
     return response.data;

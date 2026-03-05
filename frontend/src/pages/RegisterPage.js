@@ -14,7 +14,7 @@ const RegisterPage = () => {
     setLoading(true);
     try {
       await register(formData);
-      navigate('/');
+      navigate('/login');
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed');
     } finally {
@@ -30,17 +30,20 @@ const RegisterPage = () => {
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block text-gray-700 mb-2">Name</label>
-            <input type="text" name="name" onChange={(e) => setFormData({...formData, name: e.target.value})} className="input-field" required />
+            <input type="text" name="name" onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="input-field" required />
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 mb-2">Email</label>
-            <input type="email" name="email" onChange={(e) => setFormData({...formData, email: e.target.value})} className="input-field" required />
+            <input type="email" name="email" onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="input-field" required />
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 mb-2">Password</label>
-            <input type="password" name="password" onChange={(e) => setFormData({...formData, password: e.target.value})} className="input-field" required />
+            <input type="password" name="password" onChange={(e) => setFormData({ ...formData, password: e.target.value })} className="input-field" required />
           </div>
-          <button type="submit" disabled={loading} className="btn-primary w-full">{loading ? 'Registering...' : 'Register'}</button>
+          <button type="submit" disabled={loading} className="btn-primary w-full">
+            {loading ? "Registering..." : "Register"}
+          </button>
+          {/* <button type="submit" disabled={loading} className="btn-primary w-full">{loading ? 'Registering...' : 'Register'}</button> */}
         </form>
         <p className="mt-4 text-center"><Link to="/login" className="text-blue-600">Login</Link></p>
       </div>

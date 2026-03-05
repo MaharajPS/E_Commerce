@@ -34,6 +34,7 @@ const OrderList = ({ adminView = false }) => {
                     <button onClick={() => orderService.cancelOrder(order.id).then(() => window.location.reload())} className="text-red-600">Cancel</button>
                   )}
                 </td>
+                
               </tr>
             ))}
           </tbody>

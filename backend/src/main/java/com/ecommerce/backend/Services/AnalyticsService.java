@@ -45,10 +45,10 @@ public class AnalyticsService {
         List<Object[]> results = analyticsRepository.getTopSellingProducts(limit);
         return results.stream()
                 .map(row -> ProductSalesDto.builder()
-                        .productId(((Number) row[0]).longValue())
-                        .productName((String) row[1])
-                        .totalSold(((Number) row[2]).longValue())
-                        .revenue((BigDecimal) row[3])
+                        .productId(asLong(row[0]))
+                        .productName(asString(row[1]))
+                        .totalSold(asLong(row[2]))
+                        .revenue(asBigDecimal(row[3]))
                         .build())
                 .collect(Collectors.toList());
     }
@@ -64,8 +64,8 @@ public class AnalyticsService {
         List<Object[]> results = analyticsRepository.getRevenuePerDay(startDate, endDate);
         return results.stream()
                 .map(row -> DailyRevenueDto.builder()
-                        .saleDate((LocalDate) row[0])
-                        .dailyRevenue((BigDecimal) row[1])
+                        .saleDate(asLocalDate(row[0]))
+                        .dailyRevenue(asBigDecimal(row[1]))
                         .build())
                 .collect(Collectors.toList());
     }
@@ -74,12 +74,38 @@ public class AnalyticsService {
         List<Object[]> results = analyticsRepository.getSalesPerProduct(productId);
         return results.stream()
                 .map(row -> ProductSalesDto.builder()
-                        .productId(((Number) row[0]).longValue())
-                        .productName((String) row[1])
-                        .totalSold(((Number) row[2]).longValue())
-                        .revenue((BigDecimal) row[3])
+                        .productId(asLong(row[0]))
+                        .productName(asString(row[1]))
+                        .totalSold(asLong(row[2]))
+                        .revenue(asBigDecimal(row[3]))
                         .build())
                 .collect(Collectors.toList());
+    }
+
+    private Long asLong(Object val) {
+        if (val == null) return 0L;
+        if (val instanceof Number) return ((Number) val).longValue();
+        return Long.parseLong(val.toString());
+    }
+
+    private String asString(Object val) {
+        return val == null ? "" : val.toString();
+    }
+
+    private BigDecimal asBigDecimal(Object val) {
+        if (val == null) return BigDecimal.ZERO;
+        if (val instanceof BigDecimal) return (BigDecimal) val;
+        return new BigDecimal(val.toString());
+    }
+
+    private LocalDate asLocalDate(Object val) {
+        if (val == null) return null;
+        if (val instanceof LocalDate) return (LocalDate) val;
+        if (val instanceof java.sql.Date) return ((java.sql.Date) val).toLocalDate();
+        if (val instanceof java.util.Date) {
+             return new java.sql.Date(((java.util.Date) val).getTime()).toLocalDate();
+        }
+        return LocalDate.parse(val.toString());
     }
 
     public Map<String, Long> getOrdersByStatus() {

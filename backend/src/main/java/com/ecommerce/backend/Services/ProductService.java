@@ -34,7 +34,6 @@ public class ProductService {
                 .availableQuantity(request.getAvailableQuantity())
                 .status(ProductStatus.ACTIVE)
                 .build();
-
         Product savedProduct = productRepository.save(product);
         return toProductResponse(savedProduct);
     }
@@ -71,12 +70,10 @@ public class ProductService {
     public ProductResponse updateProduct(Long id, ProductRequest request) {
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Product", "id", id));
-
         product.setName(request.getName());
         product.setDescription(request.getDescription());
         product.setPrice(request.getPrice());
         product.setAvailableQuantity(request.getAvailableQuantity());
-
         Product updatedProduct = productRepository.save(product);
         return toProductResponse(updatedProduct);
     }

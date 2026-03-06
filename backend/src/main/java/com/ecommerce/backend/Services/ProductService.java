@@ -4,6 +4,8 @@ import com.ecommerce.backend.dto.request.ProductRequest;
 import com.ecommerce.backend.dto.response.ProductResponse;
 import com.ecommerce.backend.Entity.Product;
 import com.ecommerce.backend.Entity.Enum.ProductStatus;
+import com.ecommerce.backend.Exception.ResourceNotFoundException;
+import com.ecommerce.backend.Exception.InsufficientStockException;
 import com.ecommerce.backend.Repository.ProductRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -32,15 +34,24 @@ public class ProductService {
                 .availableQuantity(request.getAvailableQuantity())
                 .status(ProductStatus.ACTIVE)
                 .build();
-
         Product savedProduct = productRepository.save(product);
         return toProductResponse(savedProduct);
     }
 
     public Page<ProductResponse> getAllProducts(int page, int size, String sortBy, String direction) {
-        Sort sort = direction.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+
+        if (sortBy == null || sortBy.isBlank()) {
+            sortBy = "id";
+        }
+
+        Sort sort = direction.equalsIgnoreCase("asc")
+                ? Sort.by(sortBy).ascending()
+                : Sort.by(sortBy).descending();
+
         PageRequest pageRequest = PageRequest.of(page, size, sort);
-        return productRepository.findAll(pageRequest).map(this::toProductResponse);
+
+        return productRepository.findAll(pageRequest)
+                .map(this::toProductResponse);
     }
 
     public List<ProductResponse> getActiveProducts() {
@@ -59,12 +70,10 @@ public class ProductService {
     public ProductResponse updateProduct(Long id, ProductRequest request) {
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Product", "id", id));
-
         product.setName(request.getName());
         product.setDescription(request.getDescription());
         product.setPrice(request.getPrice());
         product.setAvailableQuantity(request.getAvailableQuantity());
-
         Product updatedProduct = productRepository.save(product);
         return toProductResponse(updatedProduct);
     }

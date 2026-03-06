@@ -1,5 +1,9 @@
 package com.ecommerce.backend.Entity.Enum;
 
-public class OrderStatus {
-    
+public enum OrderStatus {
+    CREATED,
+    CONFIRMED,
+    SHIPPED,
+    DELIVERED,
+    CANCELLED
 }

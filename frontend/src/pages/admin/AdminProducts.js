@@ -31,7 +31,7 @@ export default function AdminProducts() {
     }
   };
 
-  const formatPrice = (p) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(p);
+  const formatPrice = (p) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(p);
   const filtered = products.filter(p => p.name?.toLowerCase().includes(search.toLowerCase()) || p.storeName?.toLowerCase().includes(search.toLowerCase()));
 
   return (

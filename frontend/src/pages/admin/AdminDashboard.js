@@ -23,7 +23,7 @@ export default function AdminDashboard() {
 
   const statCards = [
     { label: 'Total Orders', value: stats?.totalOrders || 0, icon: '🛒', color: 'from-blue-500 to-cyan-500' },
-    { label: 'Revenue', value: `$${(stats?.totalRevenue || 0).toLocaleString()}`, icon: '💰', color: 'from-emerald-500 to-teal-500' },
+    { label: 'Revenue', value: `₹${(stats?.totalRevenue || 0).toLocaleString()}`, icon: '💰', color: 'from-emerald-500 to-teal-500' },
     { label: 'Active Sellers', value: stats?.totalSellers || 0, icon: '🏪', color: 'from-violet-500 to-purple-500' },
     { label: 'Pending Apps', value: stats?.pendingApplications || 0, icon: '⏳', color: 'from-orange-500 to-amber-500' },
   ];
@@ -58,7 +58,7 @@ export default function AdminDashboard() {
           <h3 className="font-display font-semibold text-lg dark:text-white text-gray-900 mb-4">Revenue Trend</h3>
           <Line options={chartOptions} data={{
             labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            datasets: [{ label: 'Revenue ($)', data: [320, 180, 430, 260, 510, 390, 480], borderColor: '#10b981', backgroundColor: 'rgba(16,185,129,0.1)', fill: true, tension: 0.4 }]
+            datasets: [{ label: 'Revenue (₹)', data: [320, 180, 430, 260, 510, 390, 480], borderColor: '#10b981', backgroundColor: 'rgba(16,185,129,0.1)', fill: true, tension: 0.4 }]
           }} />
         </div>
       </div>

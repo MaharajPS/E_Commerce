@@ -38,7 +38,7 @@ public class Payment {
     private BigDecimal amount;
 
     @Builder.Default
-    private String currency = "usd";
+    private String currency = "inr";
 
     @Enumerated(EnumType.STRING)
     @Builder.Default

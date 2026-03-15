@@ -56,7 +56,7 @@ public class PaymentService {
 
         PaymentIntentCreateParams params = PaymentIntentCreateParams.builder()
                 .setAmount(amountInCents)
-                .setCurrency("usd")
+                .setCurrency("inr")
                 .putMetadata("orderId", String.valueOf(orderId))
                 .build();
 
@@ -68,14 +68,14 @@ public class PaymentService {
         payment.setPaymentMethod(PaymentMethod.STRIPE_TEST);
         payment.setStripePaymentIntentId(intent.getId());
         payment.setAmount(order.getTotalAmount());
-        payment.setCurrency("usd");
+        payment.setCurrency("inr");
         payment.setStatus(PaymentStatus.PENDING);
         paymentRepository.save(payment);
 
         return PaymentResponse.builder()
                 .orderId(orderId)
                 .amount(order.getTotalAmount())
-                .currency("usd")
+                .currency("inr")
                 .clientSecret(intent.getClientSecret())
                 .status(PaymentStatus.PENDING)
                 .build();
@@ -117,7 +117,7 @@ public class PaymentService {
                 .order(order)
                 .paymentMethod(PaymentMethod.COD)
                 .amount(order.getTotalAmount())
-                .currency("usd")
+                .currency("inr")
                 .status(PaymentStatus.PENDING)
                 .build();
         paymentRepository.save(payment);
@@ -142,7 +142,7 @@ public class PaymentService {
 
         PaymentIntentCreateParams params = PaymentIntentCreateParams.builder()
                 .setAmount(amountInCents)
-                .setCurrency("usd")
+                .setCurrency("inr")
                 .putMetadata("type", "WALLET_CHARGE")
                 .putMetadata("customerId", String.valueOf(customer.getCustomerId()))
                 .build();
@@ -154,14 +154,14 @@ public class PaymentService {
                 .paymentMethod(PaymentMethod.STRIPE_TEST)
                 .stripePaymentIntentId(intent.getId())
                 .amount(amount)
-                .currency("usd")
+                .currency("inr")
                 .status(PaymentStatus.PENDING)
                 .build();
         paymentRepository.save(payment);
 
         return PaymentResponse.builder()
                 .amount(amount)
-                .currency("usd")
+                .currency("inr")
                 .clientSecret(intent.getClientSecret())
                 .status(PaymentStatus.PENDING)
                 .build();

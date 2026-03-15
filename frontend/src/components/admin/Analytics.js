@@ -37,7 +37,7 @@ const CustomTooltip = ({ active, payload, label }) => {
         {label && <p className="font-semibold mb-1 text-indigo-300">{label}</p>}
         {payload.map((entry, i) => (
           <p key={i} style={{ color: entry.color || '#fff' }}>
-            {entry.name}: <span className="font-bold">{typeof entry.value === 'number' && entry.name?.toLowerCase().includes('revenue') ? `$${Number(entry.value).toFixed(2)}` : entry.value}</span>
+            {entry.name}: <span className="font-bold">{typeof entry.value === 'number' && entry.name?.toLowerCase().includes('revenue') ? `₹${Number(entry.value).toFixed(2)}` : entry.value}</span>
           </p>
         ))}
       </div>
@@ -123,7 +123,7 @@ const Analytics = () => {
         <StatCard
           icon="💰"
           label="Total Revenue"
-          value={`$${totalRevenue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}
+          value={`₹${totalRevenue.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}
           color="linear-gradient(135deg, #10b981, #059669)"
           sub="Confirmed, Shipped & Delivered"
         />
@@ -228,7 +228,7 @@ const Analytics = () => {
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
               <XAxis dataKey="date" tick={{ fontSize: 11, fill: '#6b7280' }} />
-              <YAxis tick={{ fontSize: 11, fill: '#6b7280' }} tickFormatter={v => `$${v}`} />
+              <YAxis tick={{ fontSize: 11, fill: '#6b7280' }} tickFormatter={v => `₹${v}`} />
               <Tooltip content={<CustomTooltip />} />
               <Area type="monotone" dataKey="Revenue" stroke="#6366f1" strokeWidth={2.5} fill="url(#revenueGradient)" dot={{ r: 3, fill: '#6366f1' }} activeDot={{ r: 5 }} />
             </AreaChart>
@@ -260,7 +260,7 @@ const Analytics = () => {
                     </td>
                     <td className="px-4 py-3 font-medium text-gray-800">{p.productName}</td>
                     <td className="px-4 py-3 text-right text-gray-600">{p.totalSold}</td>
-                    <td className="px-4 py-3 text-right font-semibold text-gray-800">${Number(p.revenue || 0).toFixed(2)}</td>
+                    <td className="px-4 py-3 text-right font-semibold text-gray-800">₹{Number(p.revenue || 0).toFixed(2)}</td>
                   </tr>
                 ))}
               </tbody>

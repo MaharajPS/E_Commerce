@@ -56,7 +56,7 @@ public class CouponService {
         }
 
         if (coupon.getMinimumOrderAmount() != null && orderTotal.compareTo(coupon.getMinimumOrderAmount()) < 0) {
-            throw new RuntimeException("Minimum order amount of $" + coupon.getMinimumOrderAmount() + " required for this coupon");
+            throw new RuntimeException("Minimum order amount of ₹" + coupon.getMinimumOrderAmount() + " required for this coupon");
         }
 
         // Calculate discount

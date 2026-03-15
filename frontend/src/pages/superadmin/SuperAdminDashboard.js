@@ -30,7 +30,7 @@ export default function SuperAdminDashboard() {
   const platformCards = [
     { label: 'Total Users', value: stats?.totalUsers || 0, icon: '👥', color: 'from-primary-500 to-primary-700', change: '+12%' },
     { label: 'Total Sellers', value: stats?.totalSellers || 0, icon: '🏪', color: 'from-emerald-500 to-teal-600', change: '+8%' },
-    { label: 'Total Revenue', value: `$${(stats?.totalRevenue || 0).toLocaleString()}`, icon: '💰', color: 'from-violet-500 to-purple-700', change: '+24%' },
+    { label: 'Total Revenue', value: `₹${(stats?.totalRevenue || 0).toLocaleString()}`, icon: '💰', color: 'from-violet-500 to-purple-700', change: '+24%' },
     { label: 'Total Orders', value: stats?.totalOrders || 0, icon: '📦', color: 'from-orange-500 to-red-500', change: '+18%' },
     { label: 'Total Products', value: stats?.totalProducts || 0, icon: '🛍️', color: 'from-cyan-500 to-blue-600', change: '+5%' },
     { label: 'Pending Apps', value: stats?.pendingApplications || 0, icon: '⏳', color: 'from-amber-500 to-orange-500', change: '' },
@@ -39,7 +39,7 @@ export default function SuperAdminDashboard() {
   const revenueData = {
     labels: stats?.monthlyRevenue?.map(m => m.month) || ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
     datasets: [{
-      label: 'Platform Revenue ($)',
+      label: 'Platform Revenue (₹)',
       data: stats?.monthlyRevenue?.map(m => parseFloat(m.revenue) || 0) || [0, 0, 0, 0, 0, 0],
       borderColor: '#6366f1', backgroundColor: 'rgba(99,102,241,0.15)',
       fill: true, tension: 0.4,

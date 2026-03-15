@@ -39,7 +39,7 @@ export default function AdminAnalyticsPage() {
   }, []);
 
   const formatCurrency = (v) =>
-    new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(v || 0);
+    new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(v || 0);
 
   const statCards = [
     { label: 'Total Revenue',     value: formatCurrency(stats?.totalRevenue),  icon: '💰', color: 'from-emerald-500 to-teal-600',  sub: 'All time' },
@@ -64,7 +64,7 @@ export default function AdminAnalyticsPage() {
   const revenueData = {
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     datasets: [{
-      label: 'Revenue ($)',
+      label: 'Revenue (₹)',
       data: stats?.dailyRevenue || [320, 180, 430, 260, 510, 390, 480],
       borderColor: '#10b981',
       backgroundColor: 'rgba(16,185,129,0.15)',

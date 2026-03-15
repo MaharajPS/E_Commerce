@@ -104,7 +104,7 @@ export default function SellerProducts() {
     }
   };
 
-  const formatPrice = (p) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(p);
+  const formatPrice = (p) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(p);
 
   return (
     <DashboardLayout title="My Products" navItems={navItems}>
@@ -193,7 +193,7 @@ export default function SellerProducts() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="form-label">Price ($) *</label>
+                  <label className="form-label">Price (₹) *</label>
                   <input type="number" step="0.01" min="0" className="input-field" value={form.price} onChange={e => setForm(p => ({ ...p, price: e.target.value }))} required />
                 </div>
                 <div>

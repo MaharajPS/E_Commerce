@@ -47,7 +47,7 @@ export default function ProductCard({ product }) {
   const stars = Array.from({ length: 5 }, (_, i) => i < Math.round(product.averageRating || 0));
 
   const formatPrice = (price) =>
-    new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price);
+    new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(price);
 
   return (
     <div className="product-card">

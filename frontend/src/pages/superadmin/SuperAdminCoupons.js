@@ -142,9 +142,9 @@ export default function SuperAdminCoupons() {
                   <div className="text-xs text-gray-500">{c.description}</div>
                 </td>
                 <td className="p-4">
-                  {c.discountType === 'FLAT' ? `$${c.discountValue}` : `${c.discountValue}%`}
+                  {c.discountType === 'FLAT' ? `₹${c.discountValue}` : `${c.discountValue}%`}
                 </td>
-                <td className="p-4">{c.minimumOrderAmount ? `$${c.minimumOrderAmount}` : 'None'}</td>
+                <td className="p-4">{c.minimumOrderAmount ? `₹${c.minimumOrderAmount}` : 'None'}</td>
                 <td className="p-4">
                   {c.usedCount} {c.usageLimit ? `/ ${c.usageLimit}` : '(Unlimited)'}
                 </td>
@@ -187,7 +187,7 @@ export default function SuperAdminCoupons() {
                   <label className="block mb-1">Discount Type</label>
                   <select className="input-field" value={formData.discountType} onChange={e => setFormData({...formData, discountType: e.target.value})}>
                     <option value="PERCENTAGE">Percentage (%)</option>
-                    <option value="FLAT">Flat Amount ($)</option>
+                    <option value="FLAT">Flat Amount (₹)</option>
                   </select>
                 </div>
                 <div>
@@ -198,11 +198,11 @@ export default function SuperAdminCoupons() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block mb-1">Min Order Amount ($)</label>
+                  <label className="block mb-1">Min Order Amount (₹)</label>
                   <input type="number" step="0.01" className="input-field" value={formData.minimumOrderAmount} onChange={e => setFormData({...formData, minimumOrderAmount: e.target.value})} />
                 </div>
                 <div>
-                  <label className="block mb-1">Max Discount Cap ($)</label>
+                  <label className="block mb-1">Max Discount Cap (₹)</label>
                   <input type="number" step="0.01" className="input-field" value={formData.maximumDiscount} onChange={e => setFormData({...formData, maximumDiscount: e.target.value})} disabled={formData.discountType === 'FLAT'} placeholder={formData.discountType === 'FLAT' ? 'N/A' : ''} />
                 </div>
               </div>

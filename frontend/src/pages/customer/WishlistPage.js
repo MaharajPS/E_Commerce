@@ -24,7 +24,7 @@ export default function WishlistPage() {
     }
   };
 
-  const formatPrice = (p) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(p);
+  const formatPrice = (p) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(p);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-dark-900">

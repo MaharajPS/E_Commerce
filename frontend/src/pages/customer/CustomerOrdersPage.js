@@ -76,9 +76,9 @@ export default function CustomerOrdersPage() {
   };
 
   const formatPrice = (p) =>
-    new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'USD' }).format(p || 0);
+    new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(p || 0);
   const formatDate = (d) =>
-    new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    new Date(d).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
   const isWithin7Days = (dateStr) => {
     const diffMs = Math.abs(new Date() - new Date(dateStr));
     return Math.ceil(diffMs / (1000 * 60 * 60 * 24)) <= 7;

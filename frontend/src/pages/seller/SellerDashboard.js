@@ -30,7 +30,7 @@ export default function SellerDashboard() {
   const statCards = [
     { label: 'My Products', value: stats?.totalProducts || 0, icon: '📦', color: 'from-blue-500 to-cyan-500' },
     { label: 'Total Orders', value: stats?.totalOrders || 0, icon: '🛒', color: 'from-emerald-500 to-teal-500' },
-    { label: 'Revenue', value: `$${(stats?.totalRevenue || 0).toLocaleString()}`, icon: '💰', color: 'from-violet-500 to-purple-500' },
+    { label: 'Revenue', value: `₹${(stats?.totalRevenue || 0).toLocaleString()}`, icon: '💰', color: 'from-violet-500 to-purple-500' },
     { label: 'Products Active', value: stats?.totalProducts || 0, icon: '✅', color: 'from-orange-500 to-amber-500' },
   ];
 
@@ -49,7 +49,7 @@ export default function SellerDashboard() {
   const revenueData = {
     labels: stats?.dailyOrderStats?.map(d => d.date) || ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     datasets: [{
-      label: 'Revenue ($)',
+      label: 'Revenue (₹)',
       data: stats?.dailyOrderStats?.map(d => d.revenue) || [120, 240, 180, 350, 290, 410, 380],
       borderColor: 'rgb(99, 102, 241)',
       backgroundColor: 'rgba(99, 102, 241, 0.1)',

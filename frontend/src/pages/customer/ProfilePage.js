@@ -69,7 +69,7 @@ export default function ProfilePage() {
   };
 
   const formatPrice = (p) =>
-    new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(p || 0);
+    new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(p || 0);
 
   const initials = user?.name?.split(' ').map(n => n[0]).join('').toUpperCase() || '?';
   const roleLabel = user?.role?.replace('ROLE_', '') || '';

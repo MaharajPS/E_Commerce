@@ -10,7 +10,7 @@ import { getRewardBalance } from '../../services/rewardService';
 import { validateCoupon, getActiveCoupons } from '../../services/couponService';
 import toast from 'react-hot-toast';
 
-const USD = (v) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(v || 0);
+const INR = (v) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(v || 0);
 
 const stripePromise = loadStripe('pk_test_51SqtFuH3E32cbsgKdclDZ7UwUCHTD6uq6smZ2Nnb0iJj8xsycmP1eeTQntPR1lvWCuI7FlwLWSS8i62KUbwfZobH00n0IdW9vu');
 
@@ -48,7 +48,7 @@ function StripeOrderForm({ clientSecret, amount, onSuccess, onCancel }) {
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
       <div className="bg-white dark:bg-dark-800 rounded-3xl p-8 max-w-md w-full shadow-2xl animate-in zoom-in-95 duration-200">
         <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-2">💳 Card Payment</h3>
-        <p className="text-gray-500 dark:text-gray-400 mb-6 font-medium">Pay {USD(amount)} securely with Stripe</p>
+        <p className="text-gray-500 dark:text-gray-400 mb-6 font-medium">Pay {INR(amount)} securely with Stripe</p>
         
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="p-4 border-2 border-gray-100 dark:border-dark-700 rounded-2xl bg-gray-50 dark:bg-dark-900">
@@ -264,7 +264,7 @@ export default function CheckoutPage() {
                        ✅ {appliedCoupon.code} Applied
                     </p>
                     <p className="text-green-600 dark:text-green-400 text-sm mt-1">
-                      You saved {USD(appliedCoupon.calculatedDiscount)}
+                      You saved {INR(appliedCoupon.calculatedDiscount)}
                     </p>
                   </div>
                   <button onClick={removeCoupon} className="text-red-500 hover:text-red-700 text-sm font-semibold px-2 py-1">
@@ -298,10 +298,13 @@ export default function CheckoutPage() {
                             <div>
                               <p className="font-bold text-primary-700 dark:text-primary-400 text-sm">{c.code}</p>
                               <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
-                                {c.description || (c.discountType === 'FLAT' ? `${USD(c.discountValue)} off` : `${c.discountValue}% off`)}
+                                {c.description || (c.discountType === 'FLAT' ? `${INR(c.discountValue)} off` : `${c.discountValue}% off`)}
                               </p>
                               {c.minimumOrderAmount && (
-                                <p className="text-[10px] text-gray-500 mt-0.5">Min. order: {USD(c.minimumOrderAmount)}</p>
+                                <p className="text-[10px] text-gray-500 mt-0.5">Min. order: {INR(c.minimumOrderAmount)}</p>
+                              )}
+                              {c.expiryDate && (
+                                <p className="text-[10px] text-red-500 mt-0.5">Expires: {new Date(c.expiryDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
                               )}
                             </div>
                             <button
@@ -331,7 +334,7 @@ export default function CheckoutPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm text-gray-500 dark:text-gray-400">Available Balance</p>
-                    <p className="text-2xl font-bold text-primary-600 dark:text-primary-400">{USD(wallet.balance)}</p>
+                    <p className="text-2xl font-bold text-primary-600 dark:text-primary-400">{INR(wallet.balance)}</p>
                   </div>
                   <label className="flex items-center gap-3 cursor-pointer">
                     <span className="text-sm text-gray-700 dark:text-gray-300">Use Wallet</span>
@@ -345,7 +348,7 @@ export default function CheckoutPage() {
                 </div>
                 {useWallet && walletDeduction > 0 && (
                   <p className="mt-2 text-sm text-green-600 dark:text-green-400 font-medium">
-                    ✅ {USD(walletDeduction)} will be deducted from wallet
+                    ✅ {INR(walletDeduction)} will be deducted from wallet
                   </p>
                 )}
               </div>
@@ -359,7 +362,7 @@ export default function CheckoutPage() {
                   <div>
                     <p className="text-sm text-gray-500 dark:text-gray-400">Available Points</p>
                     <p className="text-2xl font-bold text-amber-500">{rewardPoints.pointsBalance} pts</p>
-                    <p className="text-xs text-gray-400">100 points = $10 off</p>
+                    <p className="text-xs text-gray-400">100 points = ₹10 off</p>
                   </div>
                   <label className="flex items-center gap-3 cursor-pointer">
                     <span className="text-sm text-gray-700 dark:text-gray-300">Use Points</span>
@@ -383,7 +386,7 @@ export default function CheckoutPage() {
                       onChange={e => setRewardPointsToRedeem(Math.min(parseInt(e.target.value) || 100, rewardPoints.pointsBalance))}
                       className="input-field"
                     />
-                    <p className="mt-1 text-sm text-amber-600 font-medium">You save: ${rewardDiscount}</p>
+                    <p className="mt-1 text-sm text-amber-600 font-medium">You save: {INR(rewardDiscount)}</p>
                   </div>
                 )}
               </div>
@@ -395,7 +398,7 @@ export default function CheckoutPage() {
                 <div className="flex-1">
                   <h2 className="font-display font-semibold text-lg text-gray-900 dark:text-white">🛡️ Protect Promise</h2>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                    Get 100% refund if your item is lost, damaged, or not as described. Only $29 per order.
+                    Get 100% refund if your item is lost, damaged, or not as described. Only ₹29 per order.
                   </p>
                 </div>
                 <div
@@ -452,7 +455,7 @@ export default function CheckoutPage() {
                       ×{item.quantity} {item.product?.name}
                     </span>
                     <span className="font-medium text-gray-900 dark:text-white flex-shrink-0">
-                      {USD((item.product?.price || 0) * item.quantity)}
+                      {INR((item.product?.price || 0) * item.quantity)}
                     </span>
                   </div>
                 ))}
@@ -462,43 +465,43 @@ export default function CheckoutPage() {
               <div className="border-t border-gray-200 dark:border-dark-600 pt-4 space-y-2">
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-500">Items Total</span>
-                  <span className="text-gray-800 dark:text-gray-200">{USD(itemsTotal)}</span>
+                  <span className="text-gray-800 dark:text-gray-200">{INR(itemsTotal)}</span>
                 </div>
                 {couponDiscount > 0 && (
                   <div className="flex justify-between text-sm">
                     <span className="text-green-600">Coupon Discount</span>
-                    <span className="text-green-600">−{USD(couponDiscount)}</span>
+                    <span className="text-green-600">−{INR(couponDiscount)}</span>
                   </div>
                 )}
                 {rewardDiscount > 0 && (
                   <div className="flex justify-between text-sm">
                     <span className="text-amber-600">Reward Points</span>
-                    <span className="text-amber-600">−{USD(rewardDiscount)}</span>
+                    <span className="text-amber-600">−{INR(rewardDiscount)}</span>
                   </div>
                 )}
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-500">Delivery</span>
                   <span className={deliveryCharge === 0 ? 'text-green-600 font-medium' : 'text-gray-800 dark:text-gray-200'}>
-                    {deliveryCharge === 0 ? 'FREE' : USD(deliveryCharge)}
+                    {deliveryCharge === 0 ? 'FREE' : INR(deliveryCharge)}
                   </span>
                 </div>
                 {protectFee > 0 && (
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-500">🛡️ Protect Promise</span>
-                    <span className="text-gray-800 dark:text-gray-200">{USD(protectFee)}</span>
+                    <span className="text-gray-800 dark:text-gray-200">{INR(protectFee)}</span>
                   </div>
                 )}
                 {walletDeduction > 0 && (
                   <div className="flex justify-between text-sm">
                     <span className="text-blue-600">👛 Wallet</span>
-                    <span className="text-blue-600">−{USD(walletDeduction)}</span>
+                    <span className="text-blue-600">−{INR(walletDeduction)}</span>
                   </div>
                 )}
               </div>
 
               <div className="border-t border-gray-200 dark:border-dark-600 mt-3 pt-3 flex justify-between items-center mb-5">
                 <span className="font-bold text-gray-900 dark:text-white">Amount to Pay</span>
-                <span className="font-black text-xl text-primary-600 dark:text-primary-400">{USD(finalAmount)}</span>
+                <span className="font-black text-xl text-primary-600 dark:text-primary-400">{INR(finalAmount)}</span>
               </div>
 
               {afterDiscount >= 500 && (
@@ -512,7 +515,7 @@ export default function CheckoutPage() {
                 disabled={loading || items.length === 0}
                 className="btn-primary w-full justify-center py-4 text-base"
               >
-                {loading ? '⏳ Processing...' : `🎉 Place Order — ${USD(finalAmount)}`}
+                {loading ? '⏳ Processing...' : `🎉 Place Order — ${INR(finalAmount)}`}
               </button>
 
               <div className="flex justify-center gap-4 mt-4">

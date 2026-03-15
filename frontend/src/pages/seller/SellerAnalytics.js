@@ -31,13 +31,13 @@ export default function SellerAnalytics() {
 
   const sampleDates = Array.from({ length: 7 }, (_, i) => {
     const d = new Date(); d.setDate(d.getDate() - (6 - i));
-    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    return d.toLocaleDateString('en-IN', { month: 'short', day: 'numeric' });
   });
 
   const revenueData = {
     labels: stats?.dailyOrderStats?.map(d => d.date) || sampleDates,
     datasets: [{
-      label: 'Daily Revenue ($)',
+      label: 'Daily Revenue (₹)',
       data: stats?.dailyOrderStats?.map(d => parseFloat(d.revenue) || 0) || [0, 0, 0, 0, 0, 0, 0],
       borderColor: '#6366f1', backgroundColor: 'rgba(99,102,241,0.15)',
       fill: true, tension: 0.4, pointBackgroundColor: '#6366f1',
@@ -90,7 +90,7 @@ export default function SellerAnalytics() {
             </div>
             <div className="flex justify-between items-center p-3 bg-gray-50 dark:bg-dark-700 rounded-xl">
               <span className="text-gray-600 dark:text-gray-400">Revenue (30d)</span>
-              <span className="font-bold text-emerald-500">${(stats?.dailyOrderStats?.reduce((s, d) => s + parseFloat(d.revenue || 0), 0) || 0).toFixed(2)}</span>
+              <span className="font-bold text-emerald-500">₹{(stats?.dailyOrderStats?.reduce((s, d) => s + parseFloat(d.revenue || 0), 0) || 0).toFixed(2)}</span>
             </div>
             <div className="flex justify-between items-center p-3 bg-gray-50 dark:bg-dark-700 rounded-xl">
               <span className="text-gray-600 dark:text-gray-400">Orders (30d)</span>

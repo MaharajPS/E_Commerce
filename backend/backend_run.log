@@ -1,0 +1,172 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.ecommerce:backend >------------------------
+[INFO] Building backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.3:run (default-cli) > test-compile @ backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ backend ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ backend ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 92 source files with javac [debug release 21] to target\classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/OrderController.java:[6,38] package com.ecommerce.backend.Services does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/OrderController.java:[18,19] cannot find symbol
+  symbol:   class OrderService
+  location: class com.ecommerce.backend.Controller.OrderController
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/OrderController.java:[20,28] cannot find symbol
+  symbol:   class OrderService
+  location: class com.ecommerce.backend.Controller.OrderController
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/AnalyticsController.java:[7,38] package com.ecommerce.backend.Services does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/AnalyticsController.java:[20,19] cannot find symbol
+  symbol:   class AnalyticsService
+  location: class com.ecommerce.backend.Controller.AnalyticsController
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/AnalyticsController.java:[22,32] cannot find symbol
+  symbol:   class AnalyticsService
+  location: class com.ecommerce.backend.Controller.AnalyticsController
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/config/WebConfig.java:[3,41] package com.ecommerce.backend.Interceptor does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/config/WebConfig.java:[12,19] cannot find symbol
+  symbol:   class AuthInterceptor
+  location: class com.ecommerce.backend.Config.WebConfig
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/config/WebConfig.java:[14,22] cannot find symbol
+  symbol:   class AuthInterceptor
+  location: class com.ecommerce.backend.Config.WebConfig
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/request/UserRegisterRequest.java:[3,41] package com.ecommerce.backend.Entity.Enum does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/request/UserRegisterRequest.java:[24,13] cannot find symbol
+  symbol:   class UserRole
+  location: class com.ecommerce.backend.dto.request.UserRegisterRequest
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/request/UserRegisterRequest.java:[24,22] cannot find symbol
+  symbol:   class UserRole
+  location: class com.ecommerce.backend.dto.request.UserRegisterRequest
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/request/UserRegisterRequest.java:[9,1] cannot find symbol
+  symbol:   class UserRole
+  location: class com.ecommerce.backend.dto.request.UserRegisterRequest
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/response/UserResponse.java:[5,41] package com.ecommerce.backend.Entity.Enum does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/response/UserResponse.java:[17,13] cannot find symbol
+  symbol:   class UserRole
+  location: class com.ecommerce.backend.dto.response.UserResponse
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/response/UserResponse.java:[12,1] cannot find symbol
+  symbol:   class UserRole
+  location: class com.ecommerce.backend.dto.response.UserResponse
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/response/UserResponse.java:[17,22] cannot find symbol
+  symbol:   class UserRole
+  location: class com.ecommerce.backend.dto.response.UserResponse
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/response/UserResponse.java:[11,1] cannot find symbol
+  symbol:   class UserRole
+  location: class com.ecommerce.backend.dto.response.UserResponse
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/repository/AnalyticsRepository.java:[4,36] package com.ecommerce.backend.Entity does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/repository/OrderItemRepository.java:[3,36] package com.ecommerce.backend.Entity does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/repository/OrderItemRepository.java:[12,60] cannot find symbol
+  symbol: class OrderItem
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/repository/OrderItemRepository.java:[14,10] cannot find symbol
+  symbol:   class OrderItem
+  location: interface com.ecommerce.backend.Repository.OrderItemRepository
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/OrderStatusController.java:[3,38] package com.ecommerce.backend.Services does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/OrderStatusController.java:[11,19] cannot find symbol
+  symbol:   class OrderStatusService
+  location: class com.ecommerce.backend.Controller.OrderStatusController
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/OrderStatusController.java:[13,34] cannot find symbol
+  symbol:   class OrderStatusService
+  location: class com.ecommerce.backend.Controller.OrderStatusController
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/UserController.java:[8,38] package com.ecommerce.backend.Services does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/UserController.java:[19,19] cannot find symbol
+  symbol:   class UserService
+  location: class com.ecommerce.backend.Controller.UserController
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/UserController.java:[21,27] cannot find symbol
+  symbol:   class UserService
+  location: class com.ecommerce.backend.Controller.UserController
+[INFO] 28 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.090 s
+[INFO] Finished at: 2026-03-14T22:18:49+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project backend: Compilation failure: Compilation failure: 
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/OrderController.java:[6,38] package com.ecommerce.backend.Services does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/OrderController.java:[18,19] cannot find symbol
+[ERROR]   symbol:   class OrderService
+[ERROR]   location: class com.ecommerce.backend.Controller.OrderController
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/OrderController.java:[20,28] cannot find symbol
+[ERROR]   symbol:   class OrderService
+[ERROR]   location: class com.ecommerce.backend.Controller.OrderController
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/AnalyticsController.java:[7,38] package com.ecommerce.backend.Services does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/AnalyticsController.java:[20,19] cannot find symbol
+[ERROR]   symbol:   class AnalyticsService
+[ERROR]   location: class com.ecommerce.backend.Controller.AnalyticsController
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/AnalyticsController.java:[22,32] cannot find symbol
+[ERROR]   symbol:   class AnalyticsService
+[ERROR]   location: class com.ecommerce.backend.Controller.AnalyticsController
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/config/WebConfig.java:[3,41] package com.ecommerce.backend.Interceptor does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/config/WebConfig.java:[12,19] cannot find symbol
+[ERROR]   symbol:   class AuthInterceptor
+[ERROR]   location: class com.ecommerce.backend.Config.WebConfig
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/config/WebConfig.java:[14,22] cannot find symbol
+[ERROR]   symbol:   class AuthInterceptor
+[ERROR]   location: class com.ecommerce.backend.Config.WebConfig
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/request/UserRegisterRequest.java:[3,41] package com.ecommerce.backend.Entity.Enum does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/request/UserRegisterRequest.java:[24,13] cannot find symbol
+[ERROR]   symbol:   class UserRole
+[ERROR]   location: class com.ecommerce.backend.dto.request.UserRegisterRequest
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/request/UserRegisterRequest.java:[24,22] cannot find symbol
+[ERROR]   symbol:   class UserRole
+[ERROR]   location: class com.ecommerce.backend.dto.request.UserRegisterRequest
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/request/UserRegisterRequest.java:[9,1] cannot find symbol
+[ERROR]   symbol:   class UserRole
+[ERROR]   location: class com.ecommerce.backend.dto.request.UserRegisterRequest
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/response/UserResponse.java:[5,41] package com.ecommerce.backend.Entity.Enum does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/response/UserResponse.java:[17,13] cannot find symbol
+[ERROR]   symbol:   class UserRole
+[ERROR]   location: class com.ecommerce.backend.dto.response.UserResponse
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/response/UserResponse.java:[12,1] cannot find symbol
+[ERROR]   symbol:   class UserRole
+[ERROR]   location: class com.ecommerce.backend.dto.response.UserResponse
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/response/UserResponse.java:[17,22] cannot find symbol
+[ERROR]   symbol:   class UserRole
+[ERROR]   location: class com.ecommerce.backend.dto.response.UserResponse
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/dto/response/UserResponse.java:[11,1] cannot find symbol
+[ERROR]   symbol:   class UserRole
+[ERROR]   location: class com.ecommerce.backend.dto.response.UserResponse
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/repository/AnalyticsRepository.java:[4,36] package com.ecommerce.backend.Entity does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/repository/OrderItemRepository.java:[3,36] package com.ecommerce.backend.Entity does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/repository/OrderItemRepository.java:[12,60] cannot find symbol
+[ERROR]   symbol: class OrderItem
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/repository/OrderItemRepository.java:[14,10] cannot find symbol
+[ERROR]   symbol:   class OrderItem
+[ERROR]   location: interface com.ecommerce.backend.Repository.OrderItemRepository
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/OrderStatusController.java:[3,38] package com.ecommerce.backend.Services does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/OrderStatusController.java:[11,19] cannot find symbol
+[ERROR]   symbol:   class OrderStatusService
+[ERROR]   location: class com.ecommerce.backend.Controller.OrderStatusController
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/OrderStatusController.java:[13,34] cannot find symbol
+[ERROR]   symbol:   class OrderStatusService
+[ERROR]   location: class com.ecommerce.backend.Controller.OrderStatusController
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/UserController.java:[8,38] package com.ecommerce.backend.Services does not exist
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/UserController.java:[19,19] cannot find symbol
+[ERROR]   symbol:   class UserService
+[ERROR]   location: class com.ecommerce.backend.Controller.UserController
+[ERROR] /E:/E_Commerce/backend/src/main/java/com/ecommerce/backend/controller/UserController.java:[21,27] cannot find symbol
+[ERROR]   symbol:   class UserService
+[ERROR]   location: class com.ecommerce.backend.Controller.UserController
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

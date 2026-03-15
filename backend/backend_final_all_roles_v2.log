@@ -1,0 +1,40 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-14T22:48:24.129+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] c.ecommerce.backend.BackendApplication   : Starting BackendApplication v0.0.1-SNAPSHOT using Java 21.0.10 with PID 30952 (E:\E_Commerce\backend\target\backend-0.0.1-SNAPSHOT.jar started by mahar in E:\E_Commerce\backend)
+2026-03-14T22:48:24.135+05:30 DEBUG 30952 --- [ecommerce-marketplace] [           main] c.ecommerce.backend.BackendApplication   : Running with Spring Boot v3.2.3, Spring v6.1.4
+2026-03-14T22:48:24.135+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] c.ecommerce.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-03-14T22:48:26.050+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-14T22:48:26.208+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 143 ms. Found 13 JPA repository interfaces.
+2026-03-14T22:48:27.331+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-03-14T22:48:27.348+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-14T22:48:27.350+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-14T22:48:27.404+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-14T22:48:27.407+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3133 ms
+2026-03-14T22:48:27.642+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-14T22:48:27.803+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-03-14T22:48:27.955+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-14T22:48:28.346+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-14T22:48:28.400+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-14T22:48:28.718+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6463da36
+2026-03-14T22:48:28.722+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-14T22:48:28.782+05:30  WARN 30952 --- [ecommerce-marketplace] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-14T22:48:30.354+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-14T22:48:30.651+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-14T22:48:31.356+05:30 DEBUG 30952 --- [ecommerce-marketplace] [           main] c.e.b.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2026-03-14T22:48:31.541+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-14T22:48:33.542+05:30  WARN 30952 --- [ecommerce-marketplace] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-14T22:48:34.717+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-03-14T22:48:34.739+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] c.ecommerce.backend.BackendApplication   : Started BackendApplication in 11.365 seconds (process running for 12.197)
+2026-03-14T22:48:34.900+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] c.ecommerce.backend.BackendApplication   : Γ£à Default categories seeded
+2026-03-14T22:48:35.065+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] c.ecommerce.backend.BackendApplication   : Γ£à Sample Admin seeded: admin@marketplace.com / Admin@123
+2026-03-14T22:48:35.243+05:30  INFO 30952 --- [ecommerce-marketplace] [           main] c.ecommerce.backend.BackendApplication   : Γ£à Sample Customer seeded: customer@marketplace.com / Customer@123
+2026-03-14T22:49:39.427+05:30  INFO 30952 --- [ecommerce-marketplace] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-14T22:49:39.429+05:30  INFO 30952 --- [ecommerce-marketplace] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-14T22:49:39.436+05:30  INFO 30952 --- [ecommerce-marketplace] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms

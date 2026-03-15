@@ -1,0 +1,68 @@
+# MartX E-Commerce Platform Documentation
+
+## 1. Project Overview
+MartX is a full-stack e-commerce marketplace built using Spring Boot (Backend) and React (Frontend). It supports multiple roles (Customer, Seller, Admin, Super Admin) and features a robust payment system integrating Stripe for both wallet survivors and order payments.
+
+## 2. Technology Stack
+- **Frontend**: React.js, Tailwind CSS, Axios, Stripe Elements, Chart.js.
+- **Backend**: Java 21, Spring Boot 3.2.3, Spring Security (JWT), JPA/Hibernate.
+- **Database**: MySQL.
+- **Payments**: Stripe SDK.
+
+## 3. Key Features
+
+### 3.1 Authentication & Security
+- Secure JWT-based authentication.
+- Role-based access control (RBAC).
+- Password encryption (BCrypt).
+
+### 3.2 Shopping Experience
+- Product browsing with categories and variants.
+- Real-time Cart management.
+- Wishlist and Recently Viewed products.
+- Review system for products.
+
+### 3.3 Payments & Wallet
+- **Stripe Integration**: Secure card payments using Stripe Elements.
+- **Internal Wallet**: Customers can add money via Stripe and use it for purchases.
+- **Reward Points**: Earn points on purchases and redeem them during checkout.
+- **Hybrid Payments**: Combine wallet, rewards, and coupons with a final card payment.
+
+### 3.4 Seller & Admin Dashboards
+- **Sellers**: Manage products, variants, and track orders/analytics.
+- **Admins**: Approve seller applications and manage platform-wide products.
+- **Super Admins**: User management (blocking/unblocking) and global analytics.
+
+## 4. Configuration
+
+### 4.1 Backend (`application.properties`)
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce_db
+spring.datasource.username=root
+spring.datasource.password=1234
+stripe.secret.key=sk_test_...
+```
+
+### 4.2 Frontend (`.env` or Config)
+- Stripe Publishable Key: `pk_test_...`
+- API Base URL: `http://localhost:8080/api`
+
+## 5. Recent Fixes & Updates
+- **Payment Intent Logic**: Updated to charge the `finalAmount` after discounts and wallet deductions.
+- **Automated Confirmation**: Orders fully paid by wallet/rewards are confirmed instantly.
+- **Data Seeding**: Corrected `CommandLineRunner` to initialize resources for existing users.
+- **UI NaN Fix**: Resolved display issues on the Order History page.
+
+## 6. How to Run
+
+### Backend
+1. Ensure MySQL is running and `ecommerce_db` exists.
+2. Run `mvn clean install`.
+3. Start the application: `mvn spring-boot:run`.
+
+### Frontend
+1. Run `npm install`.
+2. Start the dev server: `npm start`.
+
+---
+*Documentation generated on March 15, 2026.*

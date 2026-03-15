@@ -1,0 +1,10 @@
+2026-03-13T16:02:12.982+05:30  INFO 13452 --- [backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-03-13T16:02:16.429+05:30  INFO 13452 --- [backend] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-13T16:02:19.544+05:30  WARN 13452 --- [backend] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-03-13T16:02:19.591+05:30  INFO 13452 --- [backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-03-13T16:02:19.626+05:30 ERROR 13452 --- [backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+APPLICATION FAILED TO START
+Web server failed to start. Port 8080 was already in use.
+Action:
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.

@@ -1,15 +1,18 @@
 package com.ecommerce.backend.dto.request;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
-
 import java.util.List;
 
 @Data
 public class OrderRequest {
-
-    @NotEmpty(message = "Order must contain at least one product")
-    @Valid
+    private String shippingAddress;
+    private String paymentMethod; // STRIPE_TEST or COD
     private List<OrderItemRequest> items;
+
+    // Platform enhancements
+    private String couponCode;
+    private Boolean useWallet;
+    private Boolean useRewardPoints;
+    private Integer rewardPointsToRedeem;
+    private Boolean protectPromise;
 }

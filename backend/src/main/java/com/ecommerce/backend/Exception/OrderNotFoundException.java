@@ -1,4 +1,4 @@
-package com.ecommerce.backend.Exception;
+package com.ecommerce.backend.exception;
 
 
 public class OrderNotFoundException extends RuntimeException {

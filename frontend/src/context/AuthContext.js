@@ -1,44 +1,61 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { authService } from '../services/authService';
 
-const AuthContext = createContext(null);
+const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const storedUser = authService.getUser();
-    if (storedUser && authService.isAuthenticated()) {
-      setUser(storedUser);
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(() => {
+    try {
+      const stored = localStorage.getItem('user');
+      return stored ? JSON.parse(stored) : null;
+    } catch {
+      return null;
     }
-    setLoading(false);
-  }, []);
+  });
 
-  const login = async (credentials) => {
-    const data = await authService.login(credentials);
-    setUser({ id: data.id, name: data.name, email: data.email, role: data.role });
-    return data;
+  const [token, setToken] = useState(() => localStorage.getItem('token') || null);
+
+  const login = (authData) => {
+    setToken(authData.token);
+    setUser({
+      userId: authData.userId,
+      email: authData.email,
+      name: authData.name,
+      role: authData.role,
+    });
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', JSON.stringify({
+      userId: authData.userId,
+      email: authData.email,
+      name: authData.name,
+      role: authData.role,
+    }));
   };
 
-  const register = async (userData) => {
-    await authService.register(userData);
-    };
-
   const logout = () => {
-    authService.logout();
+    setToken(null);
     setUser(null);
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+  };
+
+  const isAuthenticated = !!token && !!user;
+
+  const getDashboardRoute = () => {
+    if (!user) return '/login';
+    switch (user.role) {
+      case 'ROLE_SUPER_ADMIN': return '/superadmin';
+      case 'ROLE_ADMIN': return '/admin';
+      case 'ROLE_SELLER': return '/seller';
+      case 'ROLE_CUSTOMER': return '/';
+      default: return '/';
+    }
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout, isAdmin: authService.isAdmin }}>
+    <AuthContext.Provider value={{ user, token, login, logout, isAuthenticated, getDashboardRoute }}>
       {children}
     </AuthContext.Provider>
   );
-};
+}
 
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) throw new Error('useAuth must be used within AuthProvider');
-  return context;
-};
+export const useAuth = () => useContext(AuthContext);

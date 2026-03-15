@@ -1,9 +1,7 @@
-package com.ecommerce.backend.Repository;
+package com.ecommerce.backend.repository;
 
-
-
-import com.ecommerce.backend.Entity.User;
-import com.ecommerce.backend.Entity.Enum.UserRole;
+import com.ecommerce.backend.entity.User;
+import com.ecommerce.backend.entity.enums.UserRole;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,4 +13,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
     boolean existsByEmail(String email);
     List<User> findByRole(UserRole role);
+    long countByRole(UserRole role);
 }

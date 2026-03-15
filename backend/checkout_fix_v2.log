@@ -1,0 +1,267 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-03-15T18:18:50.957+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] c.ecommerce.backend.BackendApplication   : Starting BackendApplication v0.0.1-SNAPSHOT using Java 21.0.10 with PID 29136 (E:\E_Commerce\backend\target\backend-0.0.1-SNAPSHOT.jar started by mahar in E:\E_Commerce\backend)
+2026-03-15T18:18:50.960+05:30 DEBUG 29136 --- [ecommerce-marketplace] [           main] c.ecommerce.backend.BackendApplication   : Running with Spring Boot v3.2.3, Spring v6.1.4
+2026-03-15T18:18:50.961+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] c.ecommerce.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-03-15T18:18:52.693+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-15T18:18:52.913+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 199 ms. Found 22 JPA repository interfaces.
+2026-03-15T18:18:54.045+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-03-15T18:18:54.064+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-15T18:18:54.064+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-03-15T18:18:54.126+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-15T18:18:54.127+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3058 ms
+2026-03-15T18:18:54.386+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-15T18:18:54.533+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-03-15T18:18:54.612+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-15T18:18:55.076+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-15T18:18:55.114+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-15T18:18:55.398+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4f3fec43
+2026-03-15T18:18:55.401+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-15T18:18:55.464+05:30  WARN 29136 --- [ecommerce-marketplace] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-15T18:18:57.914+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-15T18:18:58.251+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-15T18:18:58.894+05:30 DEBUG 29136 --- [ecommerce-marketplace] [           main] c.e.b.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2026-03-15T18:18:59.136+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-15T18:19:00.826+05:30  WARN 29136 --- [ecommerce-marketplace] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-15T18:19:00.976+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.b.c.AddressController:
+	{POST [/api/addresses]}: addAddress(UserDetails,Address)
+	{DELETE [/api/addresses/{id}]}: deleteAddress(Long)
+	{GET [/api/addresses]}: getMyAddresses(UserDetails)
+2026-03-15T18:19:00.990+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.b.c.AdminController:
+	{GET [/api/admin/products]}: getAllProducts(String)
+	{GET [/api/admin/analytics]}: getAnalytics()
+	{PATCH [/api/admin/products/{id}/deactivate]}: deactivateProduct(Long)
+	{GET [/api/admin/orders]}: getAllOrders()
+	{GET [/api/admin/sellers]}: getAllSellers()
+	{POST [/api/admin/applications/{id}/approve]}: approveApplication(Long,Map)
+	{GET [/api/admin/applications]}: getAllApplications()
+	{POST [/api/admin/applications/{id}/reject]}: rejectApplication(Long,Map)
+	{GET [/api/admin/applications/pending]}: getPendingApplications()
+2026-03-15T18:19:00.994+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.b.c.AuthController:
+	{POST [/api/auth/register]}: register(RegisterRequest)
+	{POST [/api/auth/login]}: login(LoginRequest)
+2026-03-15T18:19:00.995+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.b.c.CategoryController:
+	{GET [/api/categories]}: getAllCategories()
+	{GET [/api/categories/{id}]}: getCategoryById(Long)
+2026-03-15T18:19:00.998+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.b.c.CouponController:
+	{POST [/api/coupons]}: createCoupon(Coupon)
+	{GET [/api/coupons]}: getAllCoupons()
+	{GET [/api/coupons/{code}]}: getCoupon(String)
+2026-03-15T18:19:01.005+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.b.c.CustomerController:
+	{PUT [/api/customer/cart/item/{itemId}]}: updateCartItem(UserDetails,Long,int)
+	{POST [/api/customer/payment/stripe/confirm/{orderId}]}: confirmPayment(Long,Map)
+	{POST [/api/customer/payment/cod/{orderId}]}: processCOD(Long)
+	{POST [/api/customer/reviews/{productId}]}: addReview(UserDetails,Long,int,String)
+	{GET [/api/customer/cart]}: getCart(UserDetails)
+	{POST [/api/customer/orders]}: placeOrder(UserDetails,OrderRequest)
+	{POST [/api/customer/cart/add]}: addToCart(UserDetails,Long,int)
+	{POST [/api/customer/payment/stripe/create-intent/{orderId}]}: createPaymentIntent(Long)
+	{DELETE [/api/customer/cart/item/{itemId}]}: removeCartItem(UserDetails,Long)
+	{GET [/api/customer/orders]}: getMyOrders(UserDetails)
+	{POST [/api/customer/wishlist/{productId}]}: addToWishlist(UserDetails,Long)
+	{GET [/api/customer/wishlist]}: getWishlist(UserDetails)
+	{DELETE [/api/customer/wishlist/{productId}]}: removeFromWishlist(UserDetails,Long)
+2026-03-15T18:19:01.010+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.b.c.ProductController:
+	{GET [/api/products/{id}]}: getProduct(Long)
+	{GET [/api/products/categories]}: getCategories()
+	{GET [/api/products]}: getProducts(String,Long,BigDecimal,BigDecimal,int,int,String,String)
+2026-03-15T18:19:01.010+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.b.c.ProductVariantController:
+	{GET [/api/products/{productId}/variants]}: getVariants(Long)
+	{POST [/api/products/{productId}/variants]}: addVariant(Long,ProductVariant)
+2026-03-15T18:19:01.014+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.b.c.RecentlyViewedController:
+	{GET [/api/recently-viewed]}: getRecentlyViewed(UserDetails)
+	{POST [/api/recently-viewed/{productId}]}: addRecentlyViewed(UserDetails,Long)
+2026-03-15T18:19:01.014+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.b.c.ReviewController:
+	{GET [/api/products/{productId}/reviews]}: getProductReviews(Long)
+2026-03-15T18:19:01.017+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.b.c.RewardPointsController:
+	{GET [/api/rewards/balance]}: getRewardPoints(UserDetails)
+	{GET [/api/rewards/history]}: getRewardHistory(UserDetails)
+2026-03-15T18:19:01.019+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.b.c.SellerApplicationController:
+	{POST [/api/seller-applications/apply]}: apply(SellerApplicationRequest)
+2026-03-15T18:19:01.021+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.b.c.SellerController:
+	{GET [/api/seller/analytics]}: getAnalytics(UserDetails)
+	{PATCH [/api/seller/products/{id}/deactivate]}: deactivateProduct(UserDetails,Long)
+	{DELETE [/api/seller/products/{id}]}: deleteProduct(UserDetails,Long)
+	{GET [/api/seller/products]}: getMyProducts(UserDetails)
+	{PUT [/api/seller/products/{id}]}: updateProduct(UserDetails,Long,ProductRequest)
+	{PATCH [/api/seller/orders/{orderId}/status]}: updateOrderStatus(Long,OrderStatus)
+	{PATCH [/api/seller/products/{id}/activate]}: activateProduct(UserDetails,Long)
+	{GET [/api/seller/orders]}: getMyOrders(UserDetails)
+	{POST [/api/seller/products]}: createProduct(UserDetails,ProductRequest)
+2026-03-15T18:19:01.027+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.b.c.SuperAdminController:
+	{GET [/api/superadmin/analytics]}: getAnalytics()
+	{GET [/api/superadmin/sellers]}: getAllSellers()
+	{PATCH [/api/superadmin/users/{id}/block]}: blockUser(Long)
+	{DELETE [/api/superadmin/users/{id}]}: deleteUser(Long)
+	{GET [/api/superadmin/admins]}: getAllAdmins()
+	{POST [/api/superadmin/admins]}: createAdmin(Map)
+	{DELETE [/api/superadmin/admins/{id}]}: deleteAdmin(Long)
+	{GET [/api/superadmin/users]}: getAllUsers()
+	{PATCH [/api/superadmin/sellers/{id}/block]}: blockSeller(Long)
+	{PATCH [/api/superadmin/users/{id}/unblock]}: unblockUser(Long)
+2026-03-15T18:19:01.028+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.b.c.WalletController:
+	{POST [/api/wallet/add-money]}: addMoney(UserDetails,Map)
+	{POST [/api/wallet/stripe/confirm]}: confirmStripePayment(Map)
+	{GET [/api/wallet/balance]}: getWalletBalance(UserDetails)
+	{GET [/api/wallet/history]}: getWalletHistory(UserDetails)
+	{POST [/api/wallet/stripe/create-intent]}: createStripeIntent(UserDetails,Map)
+2026-03-15T18:19:01.037+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2026-03-15T18:19:01.048+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.a.OpenApiWebMvcResource:
+	{GET [/v3/api-docs.yaml], produces [application/vnd.oai.openapi]}: openapiYaml(HttpServletRequest,String,Locale)
+	{GET [/v3/api-docs], produces [application/json]}: openapiJson(HttpServletRequest,String,Locale)
+2026-03-15T18:19:01.048+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.u.SwaggerWelcomeWebMvc:
+	{GET [/swagger-ui.html]}: redirectToUi(HttpServletRequest)
+2026-03-15T18:19:01.053+05:30 TRACE 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.w.u.SwaggerConfigResource:
+	{GET [/v3/api-docs/swagger-config], produces [application/json]}: openapiJson(HttpServletRequest)
+2026-03-15T18:19:01.055+05:30 DEBUG 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 73 mappings in 'requestMappingHandlerMapping'
+2026-03-15T18:19:01.190+05:30 DEBUG 29136 --- [ecommerce-marketplace] [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-03-15T18:19:01.248+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4b71aee1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6e44d39e, org.springframework.security.web.context.SecurityContextHolderFilter@6614a420, org.springframework.security.web.header.HeaderWriterFilter@314f929, org.springframework.web.filter.CorsFilter@1f122485, org.springframework.security.web.authentication.logout.LogoutFilter@708c9f9e, com.ecommerce.backend.security.JwtAuthenticationFilter@502dc93a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5861073f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56352274, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7fd9d86, org.springframework.security.web.session.SessionManagementFilter@40d013cb, org.springframework.security.web.access.ExceptionTranslationFilter@69f1887c, org.springframework.security.web.access.intercept.AuthorizationFilter@3b73cc75]
+2026-03-15T18:19:01.390+05:30 DEBUG 29136 --- [ecommerce-marketplace] [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-03-15T18:19:01.436+05:30 DEBUG 29136 --- [ecommerce-marketplace] [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-03-15T18:19:01.776+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-03-15T18:19:01.800+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] c.ecommerce.backend.BackendApplication   : Started BackendApplication in 11.633 seconds (process running for 12.456)
+2026-03-15T18:19:01.963+05:30  INFO 29136 --- [ecommerce-marketplace] [           main] c.ecommerce.backend.BackendApplication   : Γ£à Default categories seeded
+2026-03-15T18:19:14.332+05:30  INFO 29136 --- [ecommerce-marketplace] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-15T18:19:14.335+05:30  INFO 29136 --- [ecommerce-marketplace] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-15T18:19:14.335+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-03-15T18:19:14.335+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-03-15T18:19:14.335+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2026-03-15T18:19:14.338+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5262253e
+2026-03-15T18:19:14.338+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@6c6a8692
+2026-03-15T18:19:14.338+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-03-15T18:19:14.338+05:30  INFO 29136 --- [ecommerce-marketplace] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-03-15T18:19:14.383+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/customer/orders
+2026-03-15T18:19:14.423+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/customer/orders
+2026-03-15T18:19:14.594+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/customer/orders
+2026-03-15T18:19:14.601+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/customer/orders", parameters={}
+2026-03-15T18:19:14.605+05:30 TRACE 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ecommerce.backend.controller.CustomerController#getMyOrders(UserDetails)
+2026-03-15T18:19:14.797+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-03-15T18:19:14.822+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiResponse(success=true, message=Orders fetched, data=[OrderResponse(orderId=1, customerId=1, custo (truncated)...]
+2026-03-15T18:19:14.867+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-15T18:19:44.092+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/customer/cart
+2026-03-15T18:19:44.093+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/customer/cart
+2026-03-15T18:19:44.099+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/customer/cart
+2026-03-15T18:19:44.131+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/customer/cart
+2026-03-15T18:19:44.131+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/customer/cart", parameters={}
+2026-03-15T18:19:44.132+05:30 TRACE 29136 --- [ecommerce-marketplace] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ecommerce.backend.controller.CustomerController#getCart(UserDetails)
+2026-03-15T18:19:44.156+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-03-15T18:19:44.257+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [java.lang.StackOverflowError]
+2026-03-15T18:19:44.270+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-15T18:19:44.276+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/customer/cart
+2026-03-15T18:19:44.311+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/customer/cart
+2026-03-15T18:19:44.311+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/customer/cart", parameters={}
+2026-03-15T18:19:44.312+05:30 TRACE 29136 --- [ecommerce-marketplace] [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ecommerce.backend.controller.CustomerController#getCart(UserDetails)
+2026-03-15T18:19:44.335+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-03-15T18:19:44.404+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [java.lang.StackOverflowError]
+2026-03-15T18:19:44.405+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-15T18:20:37.142+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/products?size=8&sortBy=createdAt&sortDir=desc
+2026-03-15T18:20:37.143+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-15T18:20:37.145+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/products?size=8&sortBy=createdAt&sortDir=desc
+2026-03-15T18:20:37.156+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/products?size=8&sortBy=createdAt&sortDir=desc", parameters={masked}
+2026-03-15T18:20:37.157+05:30 TRACE 29136 --- [ecommerce-marketplace] [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ecommerce.backend.controller.ProductController#getProducts(String, Long, BigDecimal, BigDecimal, int, int, String, String)
+2026-03-15T18:20:37.333+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-03-15T18:20:37.337+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiResponse(success=true, message=Products fetched, data=Page 1 of 1 containing com.ecommerce.backen (truncated)...]
+2026-03-15T18:20:37.392+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-15T18:20:37.399+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /api/products?size=8&sortBy=createdAt&sortDir=desc
+2026-03-15T18:20:37.400+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-15T18:20:37.402+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /api/products?size=8&sortBy=createdAt&sortDir=desc
+2026-03-15T18:20:37.404+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/products?size=8&sortBy=createdAt&sortDir=desc", parameters={masked}
+2026-03-15T18:20:37.406+05:30 TRACE 29136 --- [ecommerce-marketplace] [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ecommerce.backend.controller.ProductController#getProducts(String, Long, BigDecimal, BigDecimal, int, int, String, String)
+2026-03-15T18:20:37.459+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-03-15T18:20:37.459+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiResponse(success=true, message=Products fetched, data=Page 1 of 1 containing com.ecommerce.backen (truncated)...]
+2026-03-15T18:20:37.467+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-15T18:21:54.606+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/auth/login
+2026-03-15T18:21:54.626+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2026-03-15T18:21:54.628+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-15T18:21:54.629+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2026-03-15T18:21:54.629+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
+2026-03-15T18:21:54.629+05:30 TRACE 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ecommerce.backend.controller.AuthController#login(LoginRequest)
+2026-03-15T18:21:54.842+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest(email=customer@marketplace.com, password=Customer@123)]
+2026-03-15T18:21:55.534+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-03-15T18:21:55.743+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-03-15T18:21:55.750+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiResponse(success=true, message=Login successful, data=AuthResponse(token=eyJhbGciOiJIUzUxMiJ9.eyJ (truncated)...]
+2026-03-15T18:21:55.761+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-15T18:21:55.835+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/customer/cart
+2026-03-15T18:21:55.843+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/customer/cart
+2026-03-15T18:21:55.924+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/customer/cart
+2026-03-15T18:21:55.932+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/customer/cart", parameters={}
+2026-03-15T18:21:55.940+05:30 TRACE 29136 --- [ecommerce-marketplace] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ecommerce.backend.controller.CustomerController#getCart(UserDetails)
+2026-03-15T18:21:55.960+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/products?size=8&sortBy=createdAt&sortDir=desc
+2026-03-15T18:21:55.963+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/products?size=8&sortBy=createdAt&sortDir=desc
+2026-03-15T18:21:55.982+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-03-15T18:21:55.985+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/products?size=8&sortBy=createdAt&sortDir=desc
+2026-03-15T18:21:56.040+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/products?size=8&sortBy=createdAt&sortDir=desc
+2026-03-15T18:21:56.041+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/products?size=8&sortBy=createdAt&sortDir=desc", parameters={masked}
+2026-03-15T18:21:56.042+05:30 TRACE 29136 --- [ecommerce-marketplace] [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ecommerce.backend.controller.ProductController#getProducts(String, Long, BigDecimal, BigDecimal, int, int, String, String)
+2026-03-15T18:21:56.118+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-03-15T18:21:56.121+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiResponse(success=true, message=Products fetched, data=Page 1 of 1 containing com.ecommerce.backen (truncated)...]
+2026-03-15T18:21:56.127+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-15T18:21:56.130+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /api/products?size=8&sortBy=createdAt&sortDir=desc
+2026-03-15T18:21:56.166+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [java.lang.StackOverflowError]
+2026-03-15T18:21:56.189+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /api/products?size=8&sortBy=createdAt&sortDir=desc
+2026-03-15T18:21:56.189+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/products?size=8&sortBy=createdAt&sortDir=desc", parameters={masked}
+2026-03-15T18:21:56.192+05:30 TRACE 29136 --- [ecommerce-marketplace] [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ecommerce.backend.controller.ProductController#getProducts(String, Long, BigDecimal, BigDecimal, int, int, String, String)
+2026-03-15T18:21:56.207+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-15T18:21:56.275+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-03-15T18:21:56.276+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiResponse(success=true, message=Products fetched, data=Page 1 of 1 containing com.ecommerce.backen (truncated)...]
+2026-03-15T18:21:56.284+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-15T18:22:23.072+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/customer/orders
+2026-03-15T18:22:23.074+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/customer/orders
+2026-03-15T18:22:23.075+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/customer/cart
+2026-03-15T18:22:23.075+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/customer/cart
+2026-03-15T18:22:23.078+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/customer/orders
+2026-03-15T18:22:23.081+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/customer/cart
+2026-03-15T18:22:23.114+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/customer/orders
+2026-03-15T18:22:23.114+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/customer/orders", parameters={}
+2026-03-15T18:22:23.114+05:30 TRACE 29136 --- [ecommerce-marketplace] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ecommerce.backend.controller.CustomerController#getMyOrders(UserDetails)
+2026-03-15T18:22:23.118+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/customer/cart
+2026-03-15T18:22:23.118+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/customer/cart", parameters={}
+2026-03-15T18:22:23.119+05:30 TRACE 29136 --- [ecommerce-marketplace] [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ecommerce.backend.controller.CustomerController#getCart(UserDetails)
+2026-03-15T18:22:23.136+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-03-15T18:22:23.148+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-03-15T18:22:23.149+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiResponse(success=true, message=Orders fetched, data=[OrderResponse(orderId=1, customerId=1, custo (truncated)...]
+2026-03-15T18:22:23.151+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-15T18:22:23.153+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/customer/orders
+2026-03-15T18:22:23.183+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/customer/orders
+2026-03-15T18:22:23.183+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/customer/orders", parameters={}
+2026-03-15T18:22:23.183+05:30 TRACE 29136 --- [ecommerce-marketplace] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ecommerce.backend.controller.CustomerController#getMyOrders(UserDetails)
+2026-03-15T18:22:23.225+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-03-15T18:22:23.225+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ApiResponse(success=true, message=Orders fetched, data=[OrderResponse(orderId=1, customerId=1, custo (truncated)...]
+2026-03-15T18:22:23.227+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-15T18:22:23.230+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [java.lang.StackOverflowError]
+2026-03-15T18:22:23.232+05:30 DEBUG 29136 --- [ecommerce-marketplace] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-15T18:22:23.234+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/customer/cart
+2026-03-15T18:22:23.253+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/customer/cart
+2026-03-15T18:22:23.253+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/customer/cart", parameters={}
+2026-03-15T18:22:23.254+05:30 TRACE 29136 --- [ecommerce-marketplace] [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ecommerce.backend.controller.CustomerController#getCart(UserDetails)
+2026-03-15T18:22:23.267+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-03-15T18:22:23.340+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [java.lang.StackOverflowError]
+2026-03-15T18:22:23.342+05:30 DEBUG 29136 --- [ecommerce-marketplace] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

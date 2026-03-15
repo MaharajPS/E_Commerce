@@ -1,18 +1,18 @@
 package com.ecommerce.backend.dto.response;
 
-
-
-import com.ecommerce.backend.Entity.Enum.UserRole;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class AuthResponse {
-    private Long id;
-    private String name;
-    private String email;
-    private UserRole role;
     private String token;
-    private String message;
+    private String role;
+    private Long userId;
+    private String email;
+    private String name;
 }

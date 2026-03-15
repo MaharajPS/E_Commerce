@@ -1,15 +1,23 @@
-import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
-const ProtectedRoute = ({ children, adminOnly = false }) => {
-  const { user, loading, isAdmin } = useAuth();
+export default function ProtectedRoute({ children, allowedRoles }) {
+  const { isAuthenticated, user } = useAuth();
 
-  if (loading) return <div className="p-12 text-center">Loading...</div>;
-  if (!user) return <Navigate to="/login" replace />;
-  if (adminOnly && !isAdmin()) return <Navigate to="/" replace />;
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
+  }
+
+  if (allowedRoles && !allowedRoles.includes(user?.role)) {
+    // Redirect to appropriate dashboard
+    const redirectMap = {
+      'ROLE_SUPER_ADMIN': '/superadmin',
+      'ROLE_ADMIN': '/admin',
+      'ROLE_SELLER': '/seller',
+      'ROLE_CUSTOMER': '/',
+    };
+    return <Navigate to={redirectMap[user?.role] || '/'} replace />;
+  }
 
   return children;
-};
-
-export default ProtectedRoute;
+}
